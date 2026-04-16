@@ -28,4 +28,4 @@ jobs:
         run: |
           curl -v -u admin:admin \
           -T target/Ecomm.war \
-          "http://10.73.124.123:8080/manager/text/deploy?path=/Ecomm"
+          "http://192.168.0.21:8080/manager/text/deploy?path=/Ecomm"
