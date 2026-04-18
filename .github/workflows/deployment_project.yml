@@ -8,7 +8,7 @@ on:
 
 env:
   APP_NAME: Ecomm
-  TOMCAT_URL: http://13.232.195.168:8080
+  TOMCAT_URL: http://3.110.87.184:8080
 
 jobs:
 
