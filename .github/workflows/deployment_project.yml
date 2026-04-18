@@ -1,4 +1,4 @@
-name: Build with Build Tool
+name: Deploy Application with Maven and Tomcat
 
 on:
   push:
