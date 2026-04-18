@@ -28,19 +28,22 @@
 		</dependency>
 	</dependencies>
 	<build>
-    <finalName>Ecomm</finalName>
-
-    <plugins>
-
-        <!-- ✅ REQUIRED: Fix build error -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.3.2</version>
-        </plugin>
-
-    </plugins>
-</build>
+		<finalName>Ecomm</finalName>
+		<plugins>
+			<plugin> 
+				<groupId>org.apache.tomcat.maven</groupId> 
+				<artifactId>tomcat7-maven-plugin</artifactId> 
+				<version>2.2</version> 
+				<configuration> 
+					 <url>http://13.127.115.253/:8080/manager/text</url>
+					<server>apache-tomcat</server> 
+					<username>admin</username>
+					<password>admin</password>
+					<path>/Ecomm</path> 
+				</configuration> 
+			</plugin>
+		</plugins>
+	</build>
 	
  <profiles>
 	 <profile>
