@@ -3,12 +3,10 @@ name: Build with Maven
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -28,4 +26,4 @@ jobs:
         run: |
           curl -v -u admin:admin \
           -T target/Ecomm.war \
-          "http://192.168.0.21:8080/manager/text/deploy?path=/Ecomm"
+          "http://localhost:8080/manager/text/deploy?path=/Ecomm"
