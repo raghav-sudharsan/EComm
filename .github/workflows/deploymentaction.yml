@@ -2,11 +2,13 @@ name: Build with Maven
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -21,9 +23,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package --file pom.xml
-
-      - name: Deploy Ecomm-app to TomcatServer
-        run: |
-          curl -v -u admin:admin \
-          -T target/Ecomm.war \
-          "http://localhost:8080/manager/text/deploy?path=/Ecomm"
+		
+	  - name: Deploy Ecomm-app to TomcatServer
+	    run: curl -v -U admin:admin -T /home/runner/work/etoe/etoe/target/Ecomm.war 'http://13.126.212.118:8080/manager/text/deploy?path=/Ecomm.war'
